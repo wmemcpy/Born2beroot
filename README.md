@@ -16,11 +16,11 @@
 - Install : Non Graphique
 - Language : Anglais
 - Territoire : Europe/France
-- Hostname : cfrancie42
+- Hostname : login42
 - Domain name : Rien
 - Root password : Un Nom De Famille Allemand 
 - Full name : Nom Et Prénom
-- Username : cfrancie
+- Username : login
 - Password : Un Autre Nom De Famille Allemand 
 - Time zone : France/Paris
 
@@ -45,11 +45,11 @@
 $ su -
 $ apt install vim
 $ apt install sudo
-$ adduser cfrancie sudo
+$ adduser login sudo
 $ sudo reboot
 $ sudo -v
 $ sudo addgroup user42
-$ sudo adduser cfrancie user42
+$ sudo adduser login user42
 $ sudo apt update
 $ sudo touch /etc/sudoers.d/sudoconfig
 $ sudo mkdir /var/log/sudo
@@ -123,7 +123,7 @@ TCP            127.0.0.1     4242            10.0.2.15      4242
 ```
 - Connecte toi en ssh
 ```sh
-ssh cfrancie@localhost -p 4242
+ssh login@localhost -p 4242
 ```
 
 ### Monitoring.sh
@@ -213,10 +213,10 @@ $ sudo vim /etc/vsftpd.conf
 - `31 #write_enable=YES`
 
 ```sh
-$ sudo mkdir /home/cfrancie/ftp
-$ sudo mkdir /home/cfrancie/ftp/files
-$ sudo chown nobody:nogroup /home/cfrancie/ftp
-$ sudo chmod a-w /home/cfrancie/ftp
+$ sudo mkdir /home/login/ftp
+$ sudo mkdir /home/login/ftp/files
+$ sudo chown nobody:nogroup /home/login/ftp
+$ sudo chmod a-w /home/login/ftp
 <~~~>
 user_sub_token=$USER
 local_root=/home/$USER/ftp
@@ -226,7 +226,7 @@ local_root=/home/$USER/ftp
 
 ```sh
 $ sudo vi /etc/vsftpd.userlist
-$ echo cfrancie | sudo tee -a /etc/vsftpd.userlist
+$ echo login | sudo tee -a /etc/vsftpd.userlist
 <~~~>
 userlist_enable=YES
 userlist_file=/etc/vsftpd.userlist
