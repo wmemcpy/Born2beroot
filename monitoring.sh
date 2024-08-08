@@ -18,7 +18,7 @@ last_boot=$(who -b | awk '{print $3 " " $4}')
 lvm_use=$(lsblk | grep -q "lvm" && echo "yes" || echo "no")
 tcp_connections=$(ss -t | grep ESTAB | wc -l)
 logged_users=$(who | wc -l)
-ip_address=$(hostname -i | awk '{print $1}')
+ip_address=$(hostname -I | awk '{print $1}')
 mac_address=$(ip link show | awk '/ether/ {print $2; exit}')
 sudo_commands=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
